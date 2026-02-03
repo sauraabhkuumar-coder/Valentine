@@ -1,56 +1,82 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <title>Valentine 💘</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    body {
-      background: #ffe6eb;
-      font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-    }
-    .card {
-      background: white;
-      padding: 30px;
-      border-radius: 20px;
-      text-align: center;
-      box-shadow: 0 10px 30px rgba(0,0,0,.2);
-      max-width: 420px;
-      width: 90%;
-    }
-    button {
-      font-size: 18px;
-      padding: 12px 20px;
-      margin: 10px;
-      border: none;
-      border-radius: 12px;
-      cursor: pointer;
-    }
-    #yes { background: #ff4d6d; color: white; }
-    #no { background: #adb5bd; color: white; }
-    #msg { margin-top: 20px; font-size: 20px; font-weight: bold; }
-  </style>
+<meta charset="UTF-8">
+<title>Valentine 💘</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffe6eb;
+    font-family: Arial, sans-serif;
+  }
+
+  .card {
+    background: white;
+    padding: 30px 40px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  }
+
+  h1 {
+    margin-bottom: 20px;
+  }
+
+  button {
+    padding: 12px 24px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 10px;
+  }
+
+  #yes {
+    background: #ff4d6d;
+    color: white;
+  }
+
+  #no {
+    background: #adb5bd;
+    color: white;
+  }
+
+  #message {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+</style>
 </head>
 
 <body>
-  <div class="card">
-    <h1>Will you be my Valentine? 💘</h1>
 
-    <button id="yes">YES 😍</button>
-    <button id="no">NO 🙈</button>
+<div class="card">
+  <h1>Will you be my Valentine? 💘</h1>
 
-    <div id="msg"></div>
-  </div>
+  <button id="yes">YES 😍</button>
+  <button id="no">NO 🙈</button>
 
-  <script>
-    document.getElementById("yes").onclick = () => {
-      document.getElementById("msg").innerHTML =
-        "YAY!! 🥰💐 See you on Valentine’s Day 💘";
-    };
+  <div id="message"></div>
+</div>
 
-    document
+<script>
+  document.getElementById("yes").addEventListener("click", function () {
+    document.getElementById("message").innerText =
+      "YAY!! 🥰💐 See you on Valentine’s Day 💘";
+  });
+
+  document.getElementById("no").addEventListener("click", function () {
+    document.getElementById("message").innerText =
+      "Nice try 😭💔 Click YES instead!";
+  });
+</script>
+
+</body>
+</html>
